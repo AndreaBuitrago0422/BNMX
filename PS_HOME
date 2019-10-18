@@ -1,0 +1,7 @@
+sqlplus userid/password@orasys @/$PS_HOME/scripts/sqlbmx/valida_backup.sql
+RETCODE="$?"
+case "$RETCODE" in
+  "0") echo "\nBackup terminado"\ ;;
+  "8") echo "\nno hay backup mensual en los últimos 7 días"\ ;;;;
+  *)   echo "\nSQL*Plus exited with error code $RETCODE" ;;
+esac
